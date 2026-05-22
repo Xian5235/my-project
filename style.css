@@ -1,0 +1,130 @@
+body {
+  background-image: url("wood_texture.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+/* Navbar - 莫蘭迪色簡約風 */
+.navbar {
+  background-color: rgba(240, 235, 229, 0.78);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  margin: 15px auto;
+}
+.navbar-brand {
+  color: #6b6054 !important;
+  font-size: 1.2rem;
+}
+.nav-link {
+  color: #7d756b !important;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+.nav-link:hover { color: #4b4237 !important; }
+
+/* ======= 卡片樣式（仿圖片風格） ======= */
+.card {
+  border: 1.5px solid #ddd;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* 卡片標題區 */
+.card-header {
+  background-color: transparent !important;
+  border-bottom: 1.5px solid #ccc;
+  font-weight: 700;
+  color: #333;
+  font-size: 1.1rem;
+  text-align: left;
+  padding-bottom: 6px;
+}
+
+/* 卡片內文 */
+.card-body {
+  padding: 10px 15px 15px 15px;
+}
+.card-body ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.card-body li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #333;
+  padding: 4px 0;
+  border-bottom: 1px dotted #eee;
+}
+.card-body li:last-child {
+  border-bottom: none;
+}
+
+/* 莫蘭迪色系標題條點綴 */
+.morandi-red::before,
+.morandi-yellow::before,
+.morandi-green::before,
+.morandi-blue::before {
+  content: "●";
+  font-size: 0.7rem;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.morandi-red::before { color: #d4a5a5; }
+.morandi-yellow::before { color: #e3c18a; }
+.morandi-green::before { color: #a8bba2; }
+.morandi-blue::before { color: #a3bcd4; }
+
+/* ======= 排版與標題 ======= */
+h1 {
+  color: #3a3a3a;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .card-header { font-size: 1rem; }
+  .navbar { margin: 10px; }
+}
+
+/* ======= 版面結構：上三張＋中間合併＋下三張 ======= */
+.menu-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 中間那張卡片橫跨三欄 */
+.card-merged {
+  grid-column: 1 / span 3;
+  height: 260px; /* 可自行調整高度 */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #ccc;
+}
+
+/* 手機響應式調整 */
+@media (max-width: 768px) {
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+  .card-merged {
+    grid-column: auto;
+    height: auto;
+  }
+}

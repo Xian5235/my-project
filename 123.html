@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教務處進修教務組後台管理系統</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #f1f5f9; /* 莫蘭迪淺灰藍背景 */
+    }
+    /* 側邊欄樣式 */
+    .sidebar {
+      background-color: #334155; /* 深石板灰 */
+      min-height: 100vh;
+      color: white;
+    }
+    .sidebar .nav-link {
+      color: #cbd5e1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      transition: 0.2s;
+    }
+    .sidebar .nav-link:hover, .sidebar .nav-link.active {
+      background-color: #475569;
+      color: white;
+    }
+    /* 數據卡片樣式 */
+    .stat-card {
+      border: none;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+    }
+    /* 莫蘭迪統計卡片顏色 */
+    .bg-morandi-blue { background-color: #cbd5e1; color: #1e293b; }
+    .bg-morandi-yellow { background-color: #f1ebd9; color: #443e32; }
+    .bg-morandi-green { background-color: #d8e2dc; color: #2f3e35; }
+
+    /* 表格樣式微調 */
+    .table-container {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid #e2e8f0;
+    }
+    .table th {
+      background-color: #f8fafc;
+      color: #64748b;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    
+    <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse p-3 shadow shadow-sm">
+      <div class="text-center my-4">
+        <h4 class="fw-bold text-white">⚙️ 後台管理</h4>
+        <span class="badge bg-secondary">教務處進修教務組承辦人</span>
+      </div>
+      <hr class="text-secondary">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">📥 預約諮詢管理</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="11-1.html" target="_blank">🌐 前台查詢首頁</a>
+        </li>
+        <li class="nav-item mt-5">
+          <a class="nav-link text-warning fw-bold" href="11.html">🔒 安全登出</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+      
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 fw-bold text-dark">📥 學生線上諮詢單審查</h1>
+        <div class="text-secondary">目前時間：2026年5月</div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card stat-card bg-morandi-yellow shadow-sm p-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="card-subtitle mb-1 text-uppercase fw-bold">待處理案件</h6>
+                <h2 class="card-title mb-0 fw-bold">3 件</h2>
+              </div>
+              <span class="fs-1">⏳</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card stat-card bg-morandi-blue shadow-sm p-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="card-subtitle mb-1 text-uppercase fw-bold">處理中案件</h6>
+                <h2 class="card-title mb-0 fw-bold">1 件</h2>
+              </div>
+              <span class="fs-1">💬</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card stat-card bg-morandi-green shadow-sm p-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="card-subtitle mb-1 text-uppercase fw-bold">今日已結案</h6>
+                <h2 class="card-title mb-0 fw-bold">12 件</h2>
+              </div>
+              <span class="fs-1">✅</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container shadow-sm">
+        <h5 class="fw-bold mb-3 text-dark">📋 最新預約諮詢清單</h5>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th>學號</th>
+                <th>姓名</th>
+                <th>詢務類別</th>
+                <th>詳細描述</th>
+                <th>目前狀態</th>
+                <th>操作面板</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">B11001001</td>
+                <td>王小明</td>
+                <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3">轉系申請</span></td>
+                <td class="text-truncate" style="max-width: 250px;">請問一下機械系轉電機系的成績門檻是多少？部分科目沒過可以申請嗎？</td>
+                <td><span class="badge bg-warning text-dark px-2 py-1">⏳ 待處理</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-secondary me-1" onclick="viewDetail('王小明', '轉系申請', '請問一下機械系轉電機系的成績門檻是多少？部分科目沒過可以申請嗎？')">查看</button>
+                  <button class="btn btn-sm btn-success text-white" onclick="changeStatus(this)">結案</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-bold">B11001045</td>
+                <td>林志玲</td>
+                <td><span class="badge bg-info-subtle text-info border border-info-subtle rounded-pill px-3">學分抵免</span></td>
+                <td class="text-truncate" style="max-width: 250px;">我是轉學生，想請問微積分（一）在原學校修過，要如何填寫抵免單？</td>
+                <td><span class="badge bg-blue text-white px-2 py-1" style="background-color: #89a7c4;">💬 處理中</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-secondary me-1" onclick="viewDetail('林志玲', '學分抵免', '我是轉學生，想請問微積分（一）在原學校修過，要如何填寫抵免單？')">查看</button>
+                  <button class="btn btn-sm btn-success text-white" onclick="changeStatus(this)">結案</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-bold">B10902112</td>
+                <td>張學友</td>
+                <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-3">休退復學</span></td>
+                <td class="text-truncate" style="max-width: 250px;">因為要準備去服兵役，想辦理保留學籍或休學，需要帶家長同意書嗎？</td>
+                <td><span class="badge bg-warning text-dark px-2 py-1">⏳ 待處理</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-secondary me-1" onclick="viewDetail('張學友', '休退復學', '因為要準備去服兵役，想辦理保留學籍或休學，需要帶家長同意書嗎？')">查看</button>
+                  <button class="btn btn-sm btn-success text-white" onclick="changeStatus(this)">結案</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">🔍 諮詢詳情內容</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>學生姓名：</strong> <span id="modalName"></span></p>
+        <p><strong>教務類別：</strong> <span id="modalCategory"></span></p>
+        <hr>
+        <p><strong>詳細描述內容：</strong></p>
+        <div class="p-3 bg-light rounded text-muted" id="modalText"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// 初始化詳情視窗
+const detailModal = new bootstrap.Modal(document.getElementById('detailModal'));
+
+function viewDetail(name, category, text) {
+  document.getElementById('modalName').innerText = name;
+  document.getElementById('modalCategory').innerText = category;
+  document.getElementById('modalText').innerText = text;
+  detailModal.show();
+}
+
+// 簡易結案模擬功能
+function changeStatus(button) {
+  const row = button.closest('tr');
+  const statusBadge = row.querySelector('td:nth-child(5) .badge');
+  
+  statusBadge.className = "badge bg-success text-white px-2 py-1";
+  statusBadge.innerText = "✅ 已結案";
+  button.disabled = true;
+  button.className = "btn btn-sm btn-secondary disabled";
+  alert("該筆學生諮詢已成功變更為 結案 狀態！");
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
