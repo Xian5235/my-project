@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>教務處學生查詢系統</title>
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- 外部CSS -->
   <link rel="stylesheet" href="style.css">
 
   <style>
     body {
       background-color: #f8f9fa;
     }
-    /* 莫蘭迪色系定義（如果 style.css 沒寫，這裡幫你補上基礎樣式） */
+    /* 莫蘭迪色系定義 */
     .morandi-red { background-color: #e8d7d0; color: #4a3b32; font-weight: bold; }
     .morandi-yellow { background-color: #f1ebd9; color: #4a4432; font-weight: bold; }
     .morandi-green { background-color: #d8e2dc; color: #354a3e; font-weight: bold; }
@@ -47,7 +45,6 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm bg-white">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">
@@ -57,29 +54,27 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="11.html">線上預約詢問</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="11-1.html">問題查詢首頁</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="intro.html">FAQ</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-danger" href="index.html">登出</a>
-    </li>
-  </ul>
-</div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="11.html">線上預約詢問</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="11-1.html">問題查詢首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="intro.html">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="index.html">登出</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<!-- 主內容 -->
 <div class="container my-5">
   <h1 class="text-center fw-bold mb-4">學生教務問題查詢平台</h1>
 
-  <!-- 搜尋框 -->
   <div class="mb-5 mx-auto" style="max-width:600px;">
     <div class="input-group input-group-lg shadow-sm rounded">
       <span class="input-group-text bg-white border-end-0">🔍</span>
@@ -87,123 +82,212 @@
     </div>
   </div>
 
-  <!-- 卡片區：改用 Bootstrap Grid (row-cols) 自動排版 -->
-<div class="row g-4" id="cardContainer">
+  <div class="row g-4" id="cardContainer">
 
-  <div class="col-12 col-md-6 col-lg-4 search-card">
-    <div class="card h-100 shadow-sm">
-      <div class="card-header morandi-red">選課相關</div>
-      <div class="card-body">
-        <ul>
-          <li onclick="showAnswer('選課相關', '加退選時間', '加退選時間為開學第一週。')">加退選時間</li>
-          <li onclick="showAnswer('選課相關', '學分上限', '每學期最高可修25學分。')">學分上限</li>
-          <li onclick="showAnswer('選課相關', '暑修規定', '暑修需達最低開課人數。')">暑修規定</li>
-        </ul>
+    <div class="col-12 col-md-6 col-lg-4 search-card">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header morandi-red">選課相關</div>
+        <div class="card-body">
+          <ul>
+            <li onclick="showAnswer('選課相關', '加退選時間', '※網路初選時程<br>第一階段：<br>(開放時間)115年6月1日至115年6月2日(連續2天)(每天9:00起至22:00止)<br>(選課結果公告) 115年6月4日中午12:00<br>第二階段：<br>(開放時間)115年6月8日至115年6月10日(共3天) (每天16:00起至22:00止)<br>(選課結果公告)115年6月9、10、11日每日下午16:00<br>※網路加退選時程<br>(開放時間)115年8月31日至115年9月2日(共3天)(每天16:00起至22:00止)<br>(選課結果公告)115年9月1、2、3日每日下午16:00。')">加退選時間</li>
+            <li onclick="showAnswer('選課相關', '學分上限', '※研究生請務必在開學第一週結束前向指導教授或系辦公室確認所選課程是否符合畢業課標規定，且前兩學年每學期修習學分不得多於十二學分。<br>※四技一、二、三年級學生不得少於十六學分，不得多於二十五學分。四技四年級學生不得少於二學分，不得多於二十五學分。<br>※二技一年級學生不得少於十六學分，不得多於二十五學分，二技二年級學生不得少於二學分，不得多於二十五學分。')">學分上限</li>
+            <li onclick="showAnswer('選課相關', '暑修規定', '暑修需達最低開課人數，依教學業務組最新公告辦理，詳情請見<a href=\'https://oaa.nfu.edu.tw/zh_tw/teaching/t_news/ann2/-%E6%95%99%E5%AD%B8%E6%A5%AD%E5%8B%99%E7%B5%84%E5%85%AC%E5%91%8A-114%E5%AD%B8%E5%B9%B4%E5%BA%A6%E6%9A%91%E4%BF%AE%E9%81%B8%E8%AA%B2%E6%99%82%E9%96%93-58400840\' target=\'_blank\'>公告連結</a>。相關問題聯絡王小姐：05-6315114。')">暑修規定</li>          
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-12 col-md-6 col-lg-4 search-card">
-    <div class="card h-100 shadow-sm">
-      <div class="card-header morandi-yellow">轉系申請</div>
-      <div class="card-body">
-        <ul>
-          <li onclick="showAnswer('轉系申請', '轉系時間', '轉系需於第二學期提出申請。')">轉系時間</li>
-          <li onclick="showAnswer('轉系申請', '轉系條件', '需符合各系成績門檻。')">轉系條件</li>
-          <li onclick="showAnswer('轉系申請', '面試規定', '部分科系需參加面試。')">面試規定</li>
-        </ul>
+    <div class="col-12 col-md-6 col-lg-4 search-card">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header morandi-yellow">轉系申請</div>
+        <div class="card-body">
+          <ul>
+            <li onclick="showAnswer('轉系申請', '轉系時間', '轉系需於每學期公告時間提出申請。')">轉系時間</li>
+            <li onclick="showAnswer('轉系申請', '轉系條件', '需符合各系成績門檻。')">轉系條件</li>
+            <li onclick="showAnswer('轉系申請', '面試規定', '部分科系需參加面試，依系上相關規定辦理。')">面試規定</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-12 col-md-6 col-lg-4 search-card">
-    <div class="card h-100 shadow-sm">
-      <div class="card-header morandi-green">休退復學</div>
-      <div class="card-body">
-        <ul>
-          <li onclick="showAnswer('休退復學', '如何休學', '休學需至教務處填寫申請表。')">如何休學</li>
-          <li onclick="showAnswer('休退復學', '復學流程', '復學需於開學前完成申請。')">復學流程</li>
-          <li onclick="showAnswer('休退復學', '退學規定', '退學後學籍將被註銷。')">退學規定</li>
-        </ul>
+    <div class="col-12 col-md-6 col-lg-4 search-card">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header morandi-green">休退復學</div>
+        <div class="card-body">
+          <ul>
+            <li onclick="showAnswer('休退復學', '如何休學', '休學可採「線上申請」或「紙本申請」方式擇一辦理。')">如何休學</li>
+            <li onclick="showAnswer('休退復學', '復學流程', '復學需於開學前完成申請，可採「線上申請」或「紙本申請」方式擇一辦理。')">復學流程</li>
+            <li onclick="showAnswer('休退復學', '退學規定', '退學後學籍將被註銷，可採「線上申請」或「紙本申請」方式擇一辦理。')">退學規定</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-12 announcement-card">
-  <div class="card card-merged shadow-sm p-5 text-center rounded-3 border-0" 
-       style="background-color: #cbd5e1; min-height: 180px; display: flex; align-items: center; justify-content: center;">
-    <div>
-      <h2 class="fw-bold" style="color: #334155; letter-spacing: 1px;">
-        📢 教務處進修教務組重要公告
-      </h2>
-      
-      <p class="mt-2 fs-5 fw-medium" style="color: #475569;">
-        115學年度第一學期加退選時間與相關注意事項
-      </p>
-      
-      <h3 class="fw-bold text-white d-inline-block px-4 py-2 rounded-pill shadow-sm mt-2" 
-          style="background-color: #e0a899; font-size: 1.5rem;">
-        6/1 ～ 6/2
-      </h3>
+    <div class="col-12 announcement-card">
+      <div class="card card-merged shadow-sm p-5 text-center rounded-3 border-0" 
+           style="background-color: #cbd5e1; min-height: 180px; display: flex; align-items: center; justify-content: center;">
+        <div>
+          <h2 class="fw-bold" style="color: #334155; letter-spacing: 1px;">
+            📢 教務處進修教務組重要公告
+          </h2>
+          <p class="mt-2 fs-5 fw-medium" style="color: #475569;">
+            115學年度第一學期加退選時間與相關注意事項
+          </p>
+          <h3 class="fw-bold text-white d-inline-block px-4 py-2 rounded-pill shadow-sm mt-2" 
+              style="background-color: #e0a899; font-size: 1.5rem;">
+            6/1 ～ 6/2
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 search-card">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header morandi-blue">學分抵免</div>
+        <div class="card-body">
+          <ul>
+            <li onclick="showAnswer('學分抵免', '抵免方式', '由抵免系統內印出抵免科目後，相關單位簽章辦理，最後繳回進修教務組需附歷年成績單。')">抵免方式</li>
+            <li onclick="showAnswer('學分抵免', '申請期限', '每學期開學後一、二週內申請。')">申請期限</li>
+            <li onclick="showAnswer('學分抵免', '審核方式', '由各系及進修教務組等單位進行審核。')">審核方式</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 search-card">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header morandi-red">學雜費</div>
+        <div class="card-body">
+          <ul>
+            <li onclick="showAnswer('學雜費', '繳費單下載', '可至台灣銀行入口網站下載繳費單，詳情請見<a href=\'https://www.nfu.edu.tw/zh_tw/ann/adm/-%E5%87%BA%E7%B4%8D%E7%B5%84%E5%85%AC%E5%91%8A-%E5%8F%B0%E7%81%A3%E9%8A%80%E8%A1%8C%E5%AD%B8%E9%9B%9C%E8%B2%BB%E5%85%A5%E5%8F%A3%E7%B6%B2%E6%94%B9%E7%89%88%E5%8F%8A%E7%B9%B3%E8%B2%BB%E5%96%AE%E4%B8%8B%E8%BC%89%E8%AA%AA%E6%98%8E%E5%85%AC%E5%91%8A-90849874\' target=\'_blank\'>出納組公告連結</a>及<a href=\'https://school.bot.com.tw/newTwbank/index.aspx\' target=\'_blank\'>台灣銀行入口網站連結</a>。')">繳費單下載</li>
+            <li onclick="showAnswer('學雜費', '就貸申請', '可向學生生活事務組申請就學貸款。')">就貸申請</li>
+            <li onclick="showAnswer('學雜費', '逾期處理', '逾期可用網銀【ATM轉帳】及臨櫃進行補繳辦理。')">逾期處理</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 search-card">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header morandi-yellow">畢業相關</div>
+        <div class="card-body">
+          <ul>
+            <li onclick="showAnswer('畢業相關', '畢業資格', '修滿學分數及完成系上畢業門檻相關規定即可畢業。')">畢業資格</li>
+            <li onclick="showAnswer('畢業相關', '提前畢業', '1. 申請日期：符合申請資格之學生，請自115年5月25日(一)~ 115年6月18日(四)止提出申請，逾期申請者恕不受理。<br>2. 申請方式：請填寫【提前畢業申請書】並附歷年成績單、本學期選課單、歷年系排或班排名證明書等證明文件，親自至進修教務組辦理。<br>3. 成績優異學生申請提前畢業作業規定及申請書(請參閱附件)。')">提前畢業</li>
+            <li onclick="showAnswer('畢業相關', '領取證書', '1. 離校審核系統開放學生查核日期：115年6月17日 ～ 115年9月4日<br>2. 若畢業學分已修滿，如仍需辦理學分抵免，需於次學期開學前完成抵免程序，但尚未完成「抵免」程序、「英文多益」或「證照」等畢業門檻，最遲需於次學期開學前取得成績，逾時視為延畢需辦理選課，並於（115-1）學期結束後，如已符合畢業資格，方可領取證書。<br>3. 請先至線上離校審核查詢系統，確認各單位均無【未審核】或【未通過】情形已完成離校手續，且所有修課科目成績到齊，並經最後審核單位【進修教務組】審核註記為【已通過】後，再依下列公告日期及時間領取畢業證書。<br>4. 畢業生領取畢業證書注意事項、辦理離校手續(Q_A)及郵寄畢業證書信封(範例)...等相關資訊(請詳閱附件)。<br>5. 碩在職辦理畢業離校手續採線上審核方式，學生需於校務eCare上傳最終版本論文之論文原創性比對報告書(須符合各院系所標準)，線上審核方式說明及上傳原創性比對報告畫面(請參閱附件)。<br>6. 領取畢業證書時間：<br><div class=\'table-responsive mt-2\'><table class=\'table table-bordered text-center align-middle bg-white\' style=\'font-size:0.9rem;\'><thead class=\'table-light\'><tr><th>梯次</th><th>畢業生別</th><th>領取日期</th><th>領取時間</th><th>領取地點</th></tr></thead><tbody><tr><td>一</td><td>大學部修畢業班課程、研究所畢業生</td><td class=\'text-danger fw-bold\'>115年6月29日起</td><td rowspan=\'3\' class=\'text-start\'>各梯次領證時間為每日<br>上午 9:00～11:30<br>下午 2:00～4:30<br>(星期例假日除外)<br><span class=\'text-danger fw-bold\'>暑假期間星期五為彈性上班日，為避免等候時間，請儘量於星期一～四領證</span></td><td rowspan=\'3\' class=\'text-primary fw-bold text-start\'>◆進修學制：<br>四期教學大樓六樓進修教務組</td></tr><tr><td>二</td><td>大學部修低年級(1.2.3年級)、校必修、軍訓、體育、通識、校外實習、碩士班課程畢業生</td><td class=\'text-danger fw-bold\'>115年7月20日起</td></tr><tr><td>三</td><td>大學部修暑修課程畢業生</td><td class=\'text-danger fw-bold\'>115年9月1日起</td></tr></tbody></table></div>')">領取證書</li>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="answerModal" tabindex="-1" aria-labelledby="answerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="modalTitle">問題內容</h5>
+        <button type="button" class="btn-close" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="badge mb-3 d-inline-block text-dark morandi-blue" id="modalCategory" style="font-size: 0.9rem; padding: 6px 12px;">分類</span>
+        <p class="fs-5 text-secondary" id="modalBodyText">這裡是答案內容...</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+      </div>
     </div>
   </div>
 </div>
 
-  <div class="col-12 col-md-6 col-lg-4 search-card">
-    <div class="card h-100 shadow-sm">
-      <div class="card-header morandi-blue">學分抵免</div>
-      <div class="card-body">
-        <ul>
-          <li onclick="showAnswer('學分抵免', '抵免方式', '由抵免系統內印出抵免科目後（需附歷年成績單）。')">抵免方式</li>
-          <li onclick="showAnswer('學分抵免', '申請期限', '入學後一個月內申請。')">申請期限</li>
-          <li onclick="showAnswer('學分抵免', '審核方式', '由各系進行審核。')">審核方式</li>
-        </ul>
+<hr class="my-5" style="border-top: 2px dashed #cbd5e1;">
+
+  <div class="row g-4 justify-content-center mb-5">
+    
+    <div class="col-12 col-lg-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-header morandi-blue text-center py-3 fs-5">
+          📅 營業資訊
+        </div>
+        <div class="card-body p-4 d-flex flex-column justify-content-center">
+          
+          <div class="mb-3 text-center">
+            <h6 class="fw-bold text-secondary mb-2">⏱️ 營業時間</h6>
+            <div class="mb-2">
+              <span class="badge bg-secondary mb-1" style="font-size: 0.75rem;">學期期間</span>
+              <p class="fs-5 fw-medium mb-0" style="color: #4a4432;">週一 ～ 週五 12:30 - 22:00</p>
+            </div>
+            <div>
+              <span class="badge mb-1 text-white" style="background-color: #e0a899; font-size: 0.75rem;">寒暑假期間</span>
+              <p class="fs-5 fw-medium mb-0" style="color: #4a4432;">週一 ～ 週四 </p>
+              <p class="fs-5 fw-medium mb-0" style="color: #4a4432;"> 8:00 - 12:00</p>
+              <p class="fs-5 fw-medium mb-0" style="color: #4a4432;"> 13:30 - 17:00</p>
+            </div>
+          </div>
+          
+          <div class="mb-3 text-center">
+            <h6 class="fw-bold text-secondary mb-1">📞 連絡電話</h6>
+            <p class="fs-5 fw-medium mb-0" style="color: #4a3b32;">(05)6315072 課務問題</p>
+            <p class="fs-5 fw-medium mb-0" style="color: #4a3b32;">(05)6315073 學籍問題</p>
+          </div>
+          
+          <div class="text-center">
+            <h6 class="fw-bold text-secondary mb-1">📍 地址</h6>
+            <p class="fs-6 fw-medium mb-0" style="color: #354a3e;">
+              雲林縣虎尾鎮文化路64號<br>
+              <span class="text-muted" style="font-size: 0.85rem;">(第一校區 四期大樓六樓)</span>
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-12 col-md-6 col-lg-4 search-card">
-    <div class="card h-100 shadow-sm">
-      <div class="card-header morandi-red">學雜費</div>
-      <div class="card-body">
-        <ul>
-          <li onclick="showAnswer('學雜費', '繳費單下載', '可至學生系統下載繳費單。')">繳費單下載</li>
-          <li onclick="showAnswer('學雜費', '就貸申請', '可向學生生活事務組申請就學貸款。')">就貸申請</li>
-          <li onclick="showAnswer('學雜費', '逾期處理', '逾期可能影響選課。')">逾期處理</li>
-        </ul>
+    <div class="col-12 col-lg-8">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-header morandi-green text-center py-3 fs-5">
+          📍 位置
+        </div>
+        <div class="card-body p-0" style="min-height: 300px;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.2542517573584!2d120.42948949999999!3d23.7026129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346eba072ee22f11%3A0x558aed05907207d7!2z5ZyL56uL6JmO5bC-56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1761998914211!5m2!1szh-TW!2stw" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 300px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
+
   </div>
 
-  <div class="col-12 col-md-6 col-lg-4 search-card">
-    <div class="card h-100 shadow-sm">
-      <div class="card-header morandi-yellow">畢業相關</div>
-      <div class="card-body">
-        <ul>
-          <li onclick="showAnswer('畢業相關', '畢業資格', '修滿學分即可畢業。')">畢業資格</li>
-          <li onclick="showAnswer('畢業相關', '提前畢業', '成績優異可申請提前畢業。')">提前畢業</li>
-          <li onclick="showAnswer('畢業相關', '領取證書', '畢業證書需本人領取。')">領取證書</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-// 初始化 Bootstrap Modal
-const myModal = new bootstrap.Modal(document.getElementById('answerModal'));
+// 宣告 Modal 變數（這行必須放在 Bootstrap JS 載入之後，因此我移到了這裡）
+let myModal;
+
+document.addEventListener("DOMContentLoaded", function() {
+  // 確保 DOM 載入後才初始化 Modal
+  myModal = new bootstrap.Modal(document.getElementById('answerModal'));
+});
 
 // 點擊清單時觸發 Modal 的功能
 function showAnswer(category, title, answer) {
   document.getElementById("modalCategory").innerText = "📂 " + category;
   document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalBodyText").innerText = answer;
+  
+  // 🔴 請檢查這裡！一定要改成 innerHTML，英文字母大小寫不能錯喔！
+  document.getElementById("modalBodyText").innerHTML = answer; 
+  
   myModal.show();
 }
 
 // 關鍵字即時搜尋過濾邏輯
-document.getElementById("searchInput").addEventListener("keyup", function() {
+document.getElementById("searchInput").addEventListener("input", function() {
   let keyword = this.value.toLowerCase().trim();
   let searchCards = document.querySelectorAll(".search-card");
   let announceCard = document.querySelector(".announcement-card");
@@ -211,21 +295,19 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
   searchCards.forEach(card => {
     let text = card.innerText.toLowerCase();
     if (text.includes(keyword)) {
-      card.style.display = "block"; // 顯示符合的卡片
+      card.classList.remove("d-none"); // 💡 改用 Bootstrap 的 class 控制顯示，排版才不會亂
     } else {
-      card.style.display = "none";  // 隱藏不符合的卡片
+      card.classList.add("d-none");    // 💡 改用 Bootstrap 的 class 隱藏
     }
   });
 
-  // 如果使用者開始輸入字，就隱藏「公告卡片」，避免排版亂掉；清空時則重新顯示
+  // 公告卡片顯示/隱藏控制
   if (keyword !== "") {
-    if (announceCard) announceCard.style.display = "none";
+    if (announceCard) announceCard.classList.add("d-none");
   } else {
-    if (announceCard) announceCard.style.display = "block";
+    if (announceCard) announceCard.classList.remove("d-none");
   }
 });
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>承辦人登入 - 教務處進修教務組</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #f1f5f9; /* 莫蘭迪淺灰藍背景 */
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      max-width: 450px;
+      width: 100%;
+      overflow: hidden;
+    }
+    /* 延續後台的深石板灰 */
+    .login-header {
+      background-color: #334155; 
+      color: white;
+      padding: 35px 25px;
+      text-align: center;
+    }
+    .btn-login {
+      background-color: #334155;
+      color: white;
+      font-weight: 600;
+      padding: 10px;
+      transition: 0.2s;
+    }
+    .btn-login:hover {
+      background-color: #475569;
+      color: white;
+    }
+    /* 莫蘭迪黃微調標籤 */
+    .bg-morandi-yellow { 
+      background-color: #f1ebd9; 
+      color: #443e32; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container p-3">
+  <div class="login-card shadow mx-auto">
+    
+    <!-- 登入頂部 Banner -->
+    <div class="login-header">
+      <h3 class="fw-bold mb-2">⚙️ 管理端系統</h3>
+      <span class="badge bg-morandi-yellow px-3 py-2 rounded-pill fs-7 fw-bold">教務處進修教務組承辦人</span>
+    </div>
+
+    <!-- 登入表單 -->
+    <div class="card-body p-4 p-md-5">
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        
+        <!-- 帳號輸入 -->
+        <div class="mb-4">
+          <label for="username" class="form-label fw-bold text-secondary">承辦人公務帳號</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0 text-muted">👤</span>
+            <input type="text" id="username" class="form-control border-start-0 bg-light" placeholder="請輸入帳號" required>
+          </div>
+        </div>
+
+        <!-- 密碼輸入 -->
+        <div class="mb-4">
+          <label for="password" class="form-label fw-bold text-secondary">密碼</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0 text-muted">🔒</span>
+            <input type="password" id="password" class="form-control border-start-0 bg-light" placeholder="請輸入密碼" required>
+          </div>
+        </div>
+
+        <!-- 記住我 -->
+        <div class="mb-4 d-flex justify-content-between align-items-center">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe">
+            <label class="form-check-label text-muted fs-7" for="rememberMe">記住登入資訊</label>
+          </div>
+          <a href="#" class="text-decoration-none fs-7 text-secondary" onclick="alert('請洽資訊組親自辦理密碼重設')">忘記密碼？</a>
+        </div>
+
+        <!-- 登入按鈕 -->
+        <button type="submit" class="btn btn-login w-100 rounded-3 shadow-sm mb-3">安全登入後台</button>
+        
+        <!-- 回前台連結 -->
+        <div class="text-center">
+          <a href="11-1.html" class="btn btn-sm btn-outline-secondary px-3 rounded-pill fs-7">
+            ↩️ 返回學生前台查詢首頁
+          </a>
+        </div>
+
+      </form>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+function handleLogin(event) {
+  // 阻止表單預設重新整理網頁的行為
+  event.preventDefault(); 
+  
+  // 這裡可以加入你的帳密驗證邏輯（目前先做直接跳轉）
+  alert("登入成功！正在進入教務處線上諮詢單審查系統...");
+  
+  // 💡 登入成功後，直接跳轉到你的後台頁面 123.html
+  window.location.href = "123.html";
+}
+</script>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
